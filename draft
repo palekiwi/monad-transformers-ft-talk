@@ -1,0 +1,26 @@
+Learning to Understand Monad Transfomers
+
+PART I: The Base (< 10mins)
+- Story: Scary Monad vs Healthy Monad
+- Monads as computation
+- It's not about side-effects or state.
+- It's about composition.
+- Monad as duct tape (combinators >=> and >>= in typeclass definition)
+
+PART II: The Discovery (< 20mins)
+- Quote: `The real journey of discovery is not about seeking new places, but having new eyes'.
+- Why no 'Functor Transformer?' The reason there are Transformers.
+- The actual definition of MT.
+- Quizz: Does ordering matter?
+- Thinking visually about Transformer Stacks.
+
+Part III: The Journey (< 30mins)
+- Quote: 'Make the new things familiar, and the familiar things new.'
+- Step By Step: Building a (very) simple functional server.
+  * (based on the actual implementation of Scotty)
+  * from nesting to stacking
+  * from lifting to mtl
+  * noting useful patterns (newtyping, deriving in GHC, wrappers)
+- The costs of transformers.
+- Conclusions and takeaways
+- Questions
