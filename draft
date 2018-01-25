@@ -2,6 +2,7 @@ Learning to Understand Monad Transfomers
 
 PART I: The Base (< 10mins)
 - Story: Scary Monad vs Healthy Monad
+- Survey: First thing that comes to mind
 - Monads as computation
 - It's not about side-effects or state.
 - It's about composition.
