@@ -1,3 +1,4 @@
+/* eslint-disable import/no-webpack-loader-syntax */
 // Import React
 import React from 'react';
 
@@ -12,6 +13,7 @@ import {
   Quote,
   Slide,
   Text,
+  CodePane
 } from 'spectacle';
 
 // Import theme
@@ -48,6 +50,12 @@ export default class Presentation extends React.Component {
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
             open the presentation/index.js file to get started
           </Text>
+          <CodePane
+            lang="haskell"
+            source={require('./assets/test.hs')}
+            margin="20px auto"
+            overflow="overflow"
+          />
         </Slide>
         <Slide transition={['fade']} bgColor="tertiary">
           <Heading size={6} textColor="primary" caps>
