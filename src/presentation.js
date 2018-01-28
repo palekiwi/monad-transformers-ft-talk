@@ -39,9 +39,9 @@ const Haskell = (props) =>
   <CodePane
     lang="haskell"
     overflow="overflow"
-    margin="20px auto"
+    margin="10px auto"
     {...props}
-    style={{fontSize: '1.5rem'}}
+    style={{fontSize: '1.4rem'}}
   />
 
 export default class Presentation extends React.Component {
@@ -61,26 +61,14 @@ export default class Presentation extends React.Component {
             open the presentation/index.js file to get started
           </Text>
           <Haskell source={require('./assets/MaybeT.hs')}/>
+          <Haskell source={require('./assets/EitherT.hs')}/>
+          <Haskell source={require('./assets/MonadTrans.hs')}/>
+          <Haskell source={require('./assets/ReaderT.hs')}/>
         </Slide>
 
         <Slide transition={['fade']} bgColor="tertiary">
           <Heading size={6} textColor="primary" caps>
             Typography
-          </Heading>
-          <Heading size={1} textColor="secondary">
-            Heading 1
-          </Heading>
-          <Heading size={2} textColor="secondary">
-            Heading 2
-          </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
           </Heading>
           <Text size={6} textColor="secondary">
             Standard text
