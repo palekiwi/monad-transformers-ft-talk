@@ -35,6 +35,15 @@ const theme = createTheme(
   }
 );
 
+const Haskell = (props) =>
+  <CodePane
+    lang="haskell"
+    overflow="overflow"
+    margin="20px auto"
+    {...props}
+    style={{fontSize: '1.5rem'}}
+  />
+
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -46,11 +55,12 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+            The Road to Monad Transformers
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
             open the presentation/index.js file to get started
           </Text>
+          <Haskell source={require('./assets/MaybeT.hs')}/>
         </Slide>
 
         <Slide transition={['fade']} bgColor="tertiary">
