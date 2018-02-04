@@ -68,21 +68,14 @@ export default class Presentation extends React.Component {
       >
 
         <Slide bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            The Road to Monad Transformers
+          <Heading textColor="secondary" size={5} bold>
+            The Road To
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
-          </Text>
-          <Haskell source={require('./assets/MaybeT.hs')}/>
-        </Slide>
-
-        <Slide transition={['fade']} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>
-            Typography
+          <Heading fit size={1} caps lineHeight={1} textColor="secondary">
+            Monad Transformers
           </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
+          <Text margin="10px 0 0" textColor="tertiary" size={5} bold>
+            by Pawel Lisewski
           </Text>
         </Slide>
 
@@ -123,7 +116,6 @@ export default class Presentation extends React.Component {
         <Slide bgColor="secondary" progressColor="secondary" textColor="primary">
           <BlockQuote>
             <Quote>The familiar becomes new, the new becomes familiar.</Quote>
-            <Cite>Marcel Proust</Cite>
           </BlockQuote>
         </Slide>
 
