@@ -11,11 +11,10 @@ main = do
 
 readUserName :: MaybeT IO String
 readUserName = MaybeT $ do
-  str <- getLIne
+  str <- getLine
   if length str > 5
     then return $ Just str
     else return Nothing
 
 readEmail :: MaybeT IO String
-
 readPassword :: MaybeT IO String

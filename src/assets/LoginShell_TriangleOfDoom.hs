@@ -21,7 +21,5 @@ readUserName = do
     else return Nothing
 
 readEmail :: IO (Maybe String)
-
 readPassword :: IO (Maybe String)
-
 login :: String -> String -> String -> IO ()
