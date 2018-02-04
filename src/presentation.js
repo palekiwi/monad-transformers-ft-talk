@@ -44,16 +44,30 @@ const Haskell = (props) =>
     style={{fontSize: '1.4rem'}}
   />
 
+class CodeSlide extends React.Component {
+  render() {
+    return (
+      <Slide bgColor="primary">
+        <Text margin="10px 0 0" textColor="tertiary" size={1} bold>
+          {this.props.title}
+        </Text>
+        <Haskell source={this.props.src}/>
+      </Slide>
+    )
+  }
+}
+
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck
-        transition={['zoom', 'slide']}
+        transition={['fade']}
         transitionDuration={500}
         theme={theme}
+        progress="bar"
       >
 
-        <Slide transition={['zoom']} bgColor="primary">
+        <Slide bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             The Road to Monad Transformers
           </Heading>
@@ -61,9 +75,6 @@ export default class Presentation extends React.Component {
             open the presentation/index.js file to get started
           </Text>
           <Haskell source={require('./assets/MaybeT.hs')}/>
-          <Haskell source={require('./assets/EitherT.hs')}/>
-          <Haskell source={require('./assets/MonadTrans.hs')}/>
-          <Haskell source={require('./assets/ReaderT.hs')}/>
         </Slide>
 
         <Slide transition={['fade']} bgColor="tertiary">
@@ -75,24 +86,58 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
 
-        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Standard List
+        <Slide bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps>
+            Part I
           </Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
+          <Heading size={1} textColor="secondary" caps fit>
+            The Base 'Monad'
+          </Heading>
         </Slide>
 
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+        <Slide bgColor="secondary" textColor="primary">
           <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
+            <Quote>The voyage of discovery is not in seeking new landscapes but in having new eyes.</Quote>
+            <Cite>Marcel Proust</Cite>
           </BlockQuote>
         </Slide>
+
+        <Slide bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps>
+            Part II
+          </Heading>
+          <Heading size={1} textColor="secondary" caps fit>
+            The Discovery
+          </Heading>
+        </Slide>
+
+        <Slide bgColor="primary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary" caps>
+            Part III
+          </Heading>
+          <Heading size={1} textColor="secondary" caps fit>
+            The Journey
+          </Heading>
+        </Slide>
+
+        <Slide bgColor="secondary" progressColor="secondary" textColor="primary">
+          <BlockQuote>
+            <Quote>The familiar becomes new, the new becomes familiar.</Quote>
+            <Cite>Marcel Proust</Cite>
+          </BlockQuote>
+        </Slide>
+
+        <CodeSlide title="1st Iteration: Types"
+          src={require('./assets/server/Main1/types.hs')}/>
+
+        <CodeSlide title="1st Iteration: App State"
+          src={require('./assets/server/Main1/appstate.hs')}/>
+
+        <CodeSlide title="1st Iteration: Adding Routes"
+          src={require('./assets/server/Main1/addroute.hs')}/>
+
+        <CodeSlide title="1st Iteration: Folding the Routes"
+          src={require('./assets/server/Main1/runMyApp.hs')}/>
 
       </Deck>
     );
