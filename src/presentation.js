@@ -14,7 +14,13 @@ import {
   Quote,
   Slide,
   Text,
-  CodePane
+  CodePane,
+  Table,
+  TableHeader,
+  TableRow,
+  TableHeaderItem,
+  TableBody,
+  TableItem
 } from 'spectacle';
 
 // Import theme
@@ -117,6 +123,18 @@ export default class Presentation extends React.Component {
           <Heading size={1} textColor={cs.p2.h} caps fit>
             The Discovery
           </Heading>
+        </Slide>
+
+        <Slide bgColor={cs.p2.bg}>
+          <Heading size={3} textColor={cs.p2.t} fit caps>
+            Example Monad Transformers
+          </Heading>
+
+          <Haskell source={require('./assets/MaybeT.hs')} />
+          <Haskell source={require('./assets/EitherT.hs')} />
+          <Haskell source={require('./assets/WriterT.hs')} />
+          <Haskell source={require('./assets/ReaderT.hs')} />
+          <Haskell source={require('./assets/StateT.hs')} />
         </Slide>
 
         { /* Part III */ }

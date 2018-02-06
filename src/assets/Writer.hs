@@ -1,2 +1,1 @@
-newtype Writer w a =
-  Writer { runWriter :: (a, w) }
+newtype Writer w a = Writer { runWriter :: (a, w) }
