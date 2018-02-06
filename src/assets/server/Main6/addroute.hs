@@ -1,16 +1,16 @@
 -- Adding Routes -----------------------------------------------------
-addRoute :: String -> (Request -> Response) -> AppStateT ()
+addRoute :: String -> ActionT () -> AppStateT ()
 addRoute pat action = modify $ \s -> addRoute' (route pat action) s
 
 addRoute' :: Middleware -> AppState -> AppState
 addRoute' m s@AppState {routes = ms} = s {routes = m:ms}
 
-route :: String -> (Request -> Response) -> Middleware
+route :: String -> ActionT () -> Middleware
 route pat action nextApp req =
   let tryNext = nextApp req in
-  if pat == req
-  then
-    action req
-  else
-    tryNext
+    if pat == req
+      then
+        runAction action req
+      else
+        tryNext
 ----------------------------------------------------------------------

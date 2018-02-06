@@ -1,5 +1,5 @@
--- Running the App ---------------------------------------------------
-runMyApp :: (Request -> Response) -> AppState -> Request -> Response
+-- Running the App ------------------------------
+runMyApp :: Application -> AppState -> Application
 runMyApp defHandler appState =
   foldl (flip ($)) defHandler (routes appState)
 
@@ -12,4 +12,4 @@ userInputLoop appState = do
     let response = runMyApp notFound appState request
     putStrLn response
     userInputLoop appState
-----------------------------------------------------------------------
+-------------------------------------------------

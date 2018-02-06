@@ -9,7 +9,9 @@ userInputLoop appState = do
   request <- getLine
 
   unless (request == "q") $ do
-    let response = runMyApp notFound appState request
-    putStrLn response
+    let response = runMyApp defaultRoute appState request
+    case response of
+      Just x -> putStrLn x
+      Nothing -> putStrLn "Error"
     userInputLoop appState
 ----------------------------------------------------------------------

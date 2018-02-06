@@ -1,12 +1,12 @@
 -- Route Handlers ----------------------------------------------------
 routeAction1 :: Request -> Response
-routeAction1 request = textResponse request "Hello from Route 1"
+routeAction1 request = return $ textResponse request "Hello from Route 1"
 
 routeAction2 :: Request -> Response
-routeAction2 request = textResponse request "Hello from Route 2"
+routeAction2 request = Nothing
 
-notFound :: Request -> Response
-notFound request = textResponse request "Hello from the DEFAULT route"
+defaultRoute :: Request -> Response
+defaultRoute request = return $ textResponse request "Hello from the DEFAULT route"
 
 textResponse :: String -> String -> String
 textResponse req msg = unwords ["Request:", req, "\nResponse:", msg]
