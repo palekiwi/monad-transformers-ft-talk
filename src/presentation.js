@@ -10,6 +10,7 @@ import {
   Heading,
   ListItem,
   List,
+  Image,
   Quote,
   Slide,
   Text,
@@ -35,6 +36,13 @@ const theme = createTheme(
   }
 );
 
+const cs = {
+  inOut: {bg: 'tertiary', h: 'primary', t: 'secondary', p: 'primary'},
+  p1: {bg: 'primary', h: 'tertiary', t: 'secondary', p: 'tertiary'},
+  p2 : {bg: 'quartenary', h: 'tertiary', t: 'secondary', p: 'tertiary'},
+  p3 : {bg: 'secondary', h: 'tertiary', t: 'primary', p: 'secondary'},
+};
+
 const Haskell = (props) =>
   <CodePane
     lang="haskell"
@@ -47,11 +55,11 @@ const Haskell = (props) =>
 class CodeSlide extends React.Component {
   render() {
     return (
-      <Slide bgColor="primary">
-        <Text margin="10px 0 0" textColor="tertiary" size={1} bold>
+      <Slide bgColor={this.props.colors.bg} progressColor={this.props.colors.t}>
+        <Text margin="10px 0 0" textColor={this.props.colors.t} size={1} bold>
           {this.props.title}
         </Text>
-        <Haskell source={this.props.src}/>
+        <Haskell source={this.props.source}/>
       </Slide>
     )
   }
@@ -67,69 +75,95 @@ export default class Presentation extends React.Component {
         progress="bar"
       >
 
-        <Slide bgColor="primary">
-          <Heading textColor="secondary" size={5} bold>
+        { /* Intro */ }
+        <Slide bgColor={cs.inOut.bg}>
+          <Heading textColor={cs.inOut.h} size={5} bold>
             The Road To
           </Heading>
-          <Heading fit size={1} caps lineHeight={1} textColor="secondary">
+          <Heading fit size={1} caps lineHeight={1} textColor={cs.inOut.h}>
             Monad Transformers
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={5} bold>
+          <Text margin="10px 0 0" textColor={cs.inOut.t} size={5} bold>
             by Pawel Lisewski
           </Text>
         </Slide>
 
-        <Slide bgColor="primary" textColor="tertiary">
-          <Heading size={3} textColor="tertiary" caps>
+        <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
+          <Image src={require("./assets/img/luke-obiwan-peering-into-lightsaber.jpg")} />
+        </Slide>
+
+        { /* Part I */ }
+        <Slide bgColor={cs.p1.bg} textColor={cs.p1.t}>
+          <Heading size={3} textColor={cs.p1.t} caps>
             Part I
           </Heading>
-          <Heading size={1} textColor="secondary" caps fit>
+          <Heading size={1} textColor={cs.p1.h} caps fit>
             The Base 'Monad'
           </Heading>
         </Slide>
 
-        <Slide bgColor="secondary" textColor="primary">
+        <Slide bgColor={cs.p1.bg} textColor={cs.p1.t}>
           <BlockQuote>
-            <Quote>The voyage of discovery is not in seeking new landscapes but in having new eyes.</Quote>
-            <Cite>Marcel Proust</Cite>
+            <Quote textColor={cs.p1.h}>The voyage of discovery is not in seeking new landscapes but in having new eyes.</Quote>
+            <Cite textColor={cs.p1.t}>Marcel Proust</Cite>
           </BlockQuote>
         </Slide>
 
-        <Slide bgColor="primary" textColor="tertiary">
-          <Heading size={3} textColor="tertiary" caps>
+        { /* Part II */ }
+        <Slide bgColor={cs.p2.bg}>
+          <Heading size={3} textColor={cs.p2.t} caps>
             Part II
           </Heading>
-          <Heading size={1} textColor="secondary" caps fit>
+          <Heading size={1} textColor={cs.p2.h} caps fit>
             The Discovery
           </Heading>
         </Slide>
 
-        <Slide bgColor="primary" textColor="tertiary">
-          <Heading size={3} textColor="tertiary" caps>
+        { /* Part III */ }
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+          <Heading size={3} textColor={cs.p3.t} caps>
             Part III
           </Heading>
-          <Heading size={1} textColor="secondary" caps fit>
+          <Heading size={1} textColor={cs.p3.h} caps fit>
             The Journey
           </Heading>
         </Slide>
 
-        <Slide bgColor="secondary" progressColor="secondary" textColor="primary">
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
           <BlockQuote>
-            <Quote>The familiar becomes new, the new becomes familiar.</Quote>
+            <Quote textColor={cs.p3.h}>The familiar becomes new, the new becomes familiar.</Quote>
           </BlockQuote>
         </Slide>
 
         <CodeSlide title="1st Iteration: Types"
-          src={require('./assets/server/Main1/types.hs')}/>
+          colors={cs.p3}
+          source={require('./assets/server/Main1/types.hs')}/>
 
         <CodeSlide title="1st Iteration: App State"
-          src={require('./assets/server/Main1/appstate.hs')}/>
+          colors={cs.p3}
+          source={require('./assets/server/Main1/appstate.hs')}/>
 
         <CodeSlide title="1st Iteration: Adding Routes"
-          src={require('./assets/server/Main1/addroute.hs')}/>
+          colors={cs.p3}
+          source={require('./assets/server/Main1/addroute.hs')}/>
 
         <CodeSlide title="1st Iteration: Folding the Routes"
-          src={require('./assets/server/Main1/runMyApp.hs')}/>
+          colors={cs.p3}
+          source={require('./assets/server/Main1/runMyApp.hs')}/>
+
+        { /* Outro */ }
+        <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
+          <Heading size={1} textColor={cs.inOut.h} caps fit>
+            Outro
+          </Heading>
+        </Slide>
+
+        <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
+          <BlockQuote>
+            <Quote textColor={cs.inOut.h}>Give me six hours to chop a tree and I will spend the first four sharpening the axe.</Quote>
+            <Cite textColor={cs.inOut.t}>Abraham Lincoln</Cite>
+          </BlockQuote>
+        </Slide>
 
       </Deck>
     );
