@@ -53,19 +53,6 @@ const Haskell = (props) =>
     style={{fontSize: '1.4rem'}}
   />
 
-class CodeSlide extends React.Component {
-  render() {
-    return (
-      <Slide bgColor={this.props.colors.bg} progressColor={this.props.colors.t}>
-        <Text margin="10px 0 0" textColor={this.props.colors.t} size={1} bold>
-          {this.props.title}
-        </Text>
-        <Haskell source={this.props.source}/>
-      </Slide>
-    )
-  }
-}
-
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -226,13 +213,19 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <CodeSlide title="Example: Login Shell"
-          colors={cs.p2}
-          source={require('./assets/LoginShell_TriangleOfDoom.hs')}/>
+        <Slide bgColor={cs.p2.bg} progressColor={cs.p2.p}>
+          <Text margin="10px 0 0" textColor={cs.p2.t} size={1} bold>
+            Example: Login Shell
+          </Text>
+          <Haskell source={require('./assets/LoginShell_TriangleOfDoom.hs')}/>
+        </Slide>
 
-        <CodeSlide title="The Impossible Join"
-          colors={cs.p2}
-          source={require('./assets/impossible-join.hs')}/>
+        <Slide bgColor={cs.p2.bg} progressColor={cs.p2.p}>
+          <Text margin="10px 0 0" textColor={cs.p2.t} size={1} bold>
+            The Impossible Join
+          </Text>
+          <Haskell source={require('./assets/impossible-join.hs')}/>
+        </Slide>
 
         <Slide bgColor={cs.p2.bg}>
           <Heading size={3} textColor={cs.p2.t} fit caps>
@@ -242,14 +235,16 @@ export default class Presentation extends React.Component {
           <Haskell source={require('./assets/MaybeT_MonadInstance.hs')} />
 
           <Text margin="10px 0 0" textColor={cs.p2.h} size={5}>
-            A tranformer is a way to add the capability of the PRECURSOR monad to the BASE monad.
+            A transformer is a way to add the capability of the PRECURSOR monad to the BASE monad.
           </Text>
-
         </Slide>
 
-        <CodeSlide title="Example: Login Shell With Transfomers"
-          colors={cs.p2}
-          source={require('./assets/LoginShell_Transformer.hs')}/>
+        <Slide bgColor={cs.p2.bg} progressColor={cs.p2.p}>
+          <Text margin="10px 0 0" textColor={cs.p2.t} size={1} bold>
+            Example: Login Shell With A Tranformer
+          </Text>
+          <Haskell source={require('./assets/LoginShell_Transformer.hs')}/>
+        </Slide>
 
         <Slide bgColor={cs.p2.bg}>
           <Heading size={3} textColor={cs.p2.t} fit caps>
@@ -310,25 +305,40 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <CodeSlide title="1st Iteration: Types"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/types.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            1st Iteration: Types
+          </Text>
+          <Haskell source={require('./assets/server/Main1/types.hs')}/>
+        </Slide>
 
-        <CodeSlide title="1st Iteration: Route Actions"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/route-handlers.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            1st Iteration: Route Actions
+          </Text>
+          <Haskell source={require('./assets/server/Main1/route-handlers.hs')}/>
+        </Slide>
 
-        <CodeSlide title="1st Iteration: App State"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/appstate.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            1st Iteration: App State
+          </Text>
+          <Haskell source={require('./assets/server/Main1/appstate.hs')}/>
+        </Slide>
 
-        <CodeSlide title="1st Iteration: Adding Routes"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/addroute.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            1st Iteration: Adding Routes
+          </Text>
+          <Haskell source={require('./assets/server/Main1/addroute.hs')}/>
+        </Slide>
 
-        <CodeSlide title="1st Iteration: Running the app"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/runMyApp.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            1st Iteration: Running The App
+          </Text>
+          <Haskell source={require('./assets/server/Main1/runMyApp.hs')}/>
+        </Slide>
 
     { /************ 2nd Iteration *****************/ }
 
@@ -341,29 +351,47 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <CodeSlide title="2nd Iteration: Types"
-          colors={cs.p3}
-          source={require('./assets/server/Main2/types.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            2nd Iteration: Types
+          </Text>
+          <Haskell source={require('./assets/server/Main2/types.hs')}/>
+        </Slide>
 
-        <CodeSlide title="2nd Iteration: Route Actions"
-          colors={cs.p3}
-          source={require('./assets/server/Main2/route-handlers.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            2nd Iteration: Route Actions
+          </Text>
+          <Haskell source={require('./assets/server/Main2/route-handlers.hs')}/>
+        </Slide>
 
-        <CodeSlide title="Meet MonadError"
-          colors={cs.p3}
-          source={require('./assets/MonadError.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            Meet MonadError
+          </Text>
+          <Haskell source={require('./assets/MonadError.hs')}/>
+        </Slide>
 
-        <CodeSlide title="2nd Iteration: App State"
-          colors={cs.p3}
-          source={require('./assets/server/Main2/appstate.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            2nd Iteration: App State
+          </Text>
+          <Haskell source={require('./assets/server/Main2/appstate.hs')}/>
+        </Slide>
 
-        <CodeSlide title="2nd Iteration: Adding Routes"
-          colors={cs.p3}
-          source={require('./assets/server/Main2/addroute.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            2nd Iteration: Adding Routes
+          </Text>
+          <Haskell source={require('./assets/server/Main2/addroute.hs')}/>
+        </Slide>
 
-        <CodeSlide title="2nd Iteration: Running the App"
-          colors={cs.p3}
-          source={require('./assets/server/Main2/runMyApp.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            2nd Iteration: Running The App
+          </Text>
+          <Haskell source={require('./assets/server/Main2/runMyApp.hs')}/>
+        </Slide>
 
     { /************ 3rd Iteration *****************/ }
 
@@ -376,25 +404,40 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <CodeSlide title="3rd Iteration: Types"
-          colors={cs.p3}
-          source={require('./assets/server/Main3/types.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            3rd Iteration: Types
+          </Text>
+          <Haskell source={require('./assets/server/Main3/types.hs')}/>
+        </Slide>
 
-        <CodeSlide title="3rd Iteration: Route Actions"
-          colors={cs.p3}
-          source={require('./assets/server/Main3/route-handlers.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            3rd Iteration: Route Actions
+          </Text>
+          <Haskell source={require('./assets/server/Main3/route-handlers.hs')}/>
+        </Slide>
 
-        <CodeSlide title="Meet MonadTrans"
-          colors={cs.p3}
-          source={require('./assets/MonadTrans.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            Meet MonadTrans
+          </Text>
+          <Haskell source={require('./assets/MonadTrans.hs')}/>
+        </Slide>
 
-        <CodeSlide title="3rd Iteration: Adding Routes"
-          colors={cs.p3}
-          source={require('./assets/server/Main3/addroute.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            3rd Iteration: Adding Routes
+          </Text>
+          <Haskell source={require('./assets/server/Main3/addroute.hs')}/>
+        </Slide>
 
-        <CodeSlide title="3rd Iteration: Running Actions"
-          colors={cs.p3}
-          source={require('./assets/server/Main3/runAction.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            3rd Iteration: Running Actions
+          </Text>
+          <Haskell source={require('./assets/server/Main3/runAction.hs')}/>
+        </Slide>
 
     { /************ 4th Iteration *****************/ }
 
@@ -407,21 +450,33 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <CodeSlide title="4th Iteration: Types"
-          colors={cs.p3}
-          source={require('./assets/server/Main4/types.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            4th Iteration: Types
+          </Text>
+          <Haskell source={require('./assets/server/Main4/types.hs')}/>
+        </Slide>
 
-        <CodeSlide title="4th Iteration: Route Actions"
-          colors={cs.p3}
-          source={require('./assets/server/Main4/route-handlers.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            4th Iteration: Route Actions
+          </Text>
+          <Haskell source={require('./assets/server/Main4/route-handlers.hs')}/>
+        </Slide>
 
-        <CodeSlide title="4th Iteration: Adding Routes"
-          colors={cs.p3}
-          source={require('./assets/server/Main4/addroute.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            4th Iteration: Adding Routes
+          </Text>
+          <Haskell source={require('./assets/server/Main4/addroute.hs')}/>
+        </Slide>
 
-        <CodeSlide title="4th Iteration: Running Actions"
-          colors={cs.p3}
-          source={require('./assets/server/Main4/runAction.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            4th Iteration: Running Actions
+          </Text>
+          <Haskell source={require('./assets/server/Main4/runAction.hs')}/>
+        </Slide>
 
     { /************ 5th Iteration *****************/ }
 
@@ -434,29 +489,47 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <CodeSlide title="5th Iteration: Types"
-          colors={cs.p3}
-          source={require('./assets/server/Main4/types.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            5th Iteration: Types
+          </Text>
+          <Haskell source={require('./assets/server/Main5/types.hs')}/>
+        </Slide>
 
-        <CodeSlide title="Meet MonadIO"
-          colors={cs.p3}
-          source={require('./assets/MonadIO.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            Meet MonadIO
+          </Text>
+          <Haskell source={require('./assets/MonadIO.hs')}/>
+        </Slide>
 
-        <CodeSlide title="5th Iteration: Route Actions"
-          colors={cs.p3}
-          source={require('./assets/server/Main4/route-handlers.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            5th Iteration: Route Actions
+          </Text>
+          <Haskell source={require('./assets/server/Main5/route-handlers.hs')}/>
+        </Slide>
 
-        <CodeSlide title="5th Iteration: Adding Routes"
-          colors={cs.p3}
-          source={require('./assets/server/Main4/addroute.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            5th Iteration: Adding Routes
+          </Text>
+          <Haskell source={require('./assets/server/Main5/addroute.hs')}/>
+        </Slide>
 
-        <CodeSlide title="5th Iteration: Running Actions"
-          colors={cs.p3}
-          source={require('./assets/server/Main4/runAction.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            5th Iteration: Running Actions
+          </Text>
+          <Haskell source={require('./assets/server/Main5/runAction.hs')}/>
+        </Slide>
 
-        <CodeSlide title="5th Iteration: Running the app"
-          colors={cs.p3}
-          source={require('./assets/server/Main5/runMyApp.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            5th Iteration: Running The App
+          </Text>
+          <Haskell source={require('./assets/server/Main5/runMyApp.hs')}/>
+        </Slide>
 
     { /************ 6th Iteration *****************/ }
 
@@ -469,31 +542,49 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <CodeSlide title="6th Iteration: Types"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/types.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            6th Iteration: Types
+          </Text>
+          <Haskell source={require('./assets/server/Main6/types.hs')}/>
+        </Slide>
 
-        <CodeSlide title="6th Iteration: Route Actions"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/route-handlers.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            6th Iteration: Route Actions
+          </Text>
+          <Haskell source={require('./assets/server/Main6/route-handlers.hs')}/>
+        </Slide>
 
-        <CodeSlide title="6th Iteration: App State"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/appstate.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            6th Iteration: App State
+          </Text>
+          <Haskell source={require('./assets/server/Main6/appstate.hs')}/>
+        </Slide>
 
-        <CodeSlide title="6th Iteration: Adding Routes"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/addroute.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            6th Iteration: Adding Routes
+          </Text>
+          <Haskell source={require('./assets/server/Main6/addroute.hs')}/>
+        </Slide>
 
-        <CodeSlide title="6th Iteration: Running Actions"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/addroute.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            6th Iteration: Running Actions
+          </Text>
+          <Haskell source={require('./assets/server/Main6/runAction.hs')}/>
+        </Slide>
 
-        <CodeSlide title="6th Iteration: Running the app"
-          colors={cs.p3}
-          source={require('./assets/server/Main1/runMyApp.hs')}/>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            6th Iteration: Running The App
+          </Text>
+          <Haskell source={require('./assets/server/Main6/runMyApp.hs')}/>
+        </Slide>
 
-        { /* Outro */ }
+{ /*********************** Outro *********************************/ }
         <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
           <Heading size={1} textColor={cs.inOut.h} caps fit>
             Outro
