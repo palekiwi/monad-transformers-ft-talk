@@ -11,7 +11,6 @@ import {
   ListItem,
   List,
   Link,
-  S,
   Image,
   Quote,
   Slide,
@@ -94,9 +93,6 @@ export default class Presentation extends React.Component {
           <Heading fit size={4} caps lineHeight={1} textColor={cs.inOut.h}>
             Why talk about Monad Transformers?
           </Heading>
-          <Text margin="10px 0 0" textColor={cs.inOut.t} size={5}>
-            Is this healthy?
-          </Text>
         </Slide>
 
         <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
