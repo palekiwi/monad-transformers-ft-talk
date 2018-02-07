@@ -9,12 +9,10 @@ main = do
     Nothing -> print "Login denied!"
     Just (u, e, p) -> login u e p
 
-readUserName :: MaybeT IO String
+readUserName, readEmail, readPassword :: MaybeT IO String
+
 readUserName = MaybeT $ do
   str <- getLine
   if length str > 5
     then return $ Just str
     else return Nothing
-
-readEmail :: MaybeT IO String
-readPassword :: MaybeT IO String

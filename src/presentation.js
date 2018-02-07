@@ -11,6 +11,7 @@ import {
   ListItem,
   List,
   Link,
+  S,
   Image,
   Quote,
   Slide,
@@ -84,7 +85,7 @@ export default class Presentation extends React.Component {
           <Heading fit size={1} caps lineHeight={1} textColor={cs.inOut.h}>
             Monad Transformers
           </Heading>
-          <Text margin="10px 0 0" textColor={cs.inOut.t} size={5} bold>
+          <Text margin="10px 0 0" textColor={cs.inOut.t} size={5}>
             by 黎勇禪 Pawel Lisewski
           </Text>
         </Slide>
@@ -93,7 +94,7 @@ export default class Presentation extends React.Component {
           <Heading fit size={4} caps lineHeight={1} textColor={cs.inOut.h}>
             Why talk about Monad Transformers?
           </Heading>
-          <Text margin="10px 0 0" textColor={cs.inOut.t} size={5} bold>
+          <Text margin="10px 0 0" textColor={cs.inOut.t} size={5}>
             Is this healthy?
           </Text>
         </Slide>
@@ -164,9 +165,9 @@ export default class Presentation extends React.Component {
             The Power Of Monad:
           </Heading>
           <List>
-            <ListItem><s strikethrough>makes pure state possible</s></ListItem>
-            <ListItem><s strikethrough>makes side effects possible</s></ListItem>
-            <ListItem><s strikethrough>makes burritos possible</s></ListItem>
+            <ListItem>is about keeping state pure</ListItem>
+            <ListItem>is about side effects</ListItem>
+            <ListItem>is like a burrito</ListItem>
             <ListItem>makes composition possible</ListItem>
           </List>
           <Text margin="10px 0 0" textColor={cs.inOut.t} size={5} bold>
@@ -233,6 +234,27 @@ export default class Presentation extends React.Component {
           colors={cs.p2}
           source={require('./assets/LoginShell_TriangleOfDoom.hs')}/>
 
+        <CodeSlide title="The Impossible Join"
+          colors={cs.p2}
+          source={require('./assets/impossible-join.hs')}/>
+
+        <Slide bgColor={cs.p2.bg}>
+          <Heading size={3} textColor={cs.p2.t} fit caps>
+            Anatomy of A Transformer
+          </Heading>
+
+          <Haskell source={require('./assets/MaybeT_MonadInstance.hs')} />
+
+          <Text margin="10px 0 0" textColor={cs.p2.h} size={5}>
+            A tranformer is a way to add the capability of the PRECURSOR monad to the BASE monad.
+          </Text>
+
+        </Slide>
+
+        <CodeSlide title="Example: Login Shell With Transfomers"
+          colors={cs.p2}
+          source={require('./assets/LoginShell_Transformer.hs')}/>
+
         <Slide bgColor={cs.p2.bg}>
           <Heading size={3} textColor={cs.p2.t} fit caps>
             Example Monad Transformers
@@ -243,6 +265,15 @@ export default class Presentation extends React.Component {
           <Haskell source={require('./assets/WriterT.hs')} />
           <Haskell source={require('./assets/ReaderT.hs')} />
           <Haskell source={require('./assets/StateT.hs')} />
+        </Slide>
+
+        <Slide bgColor={cs.p2.bg} textColor={cs.p2.t}>
+          <Heading fit size={3} textColor={cs.p2.t} caps>
+            Question:
+          </Heading>
+          <Text margin="10px 0 0" textColor={cs.p2.t} size={5}>
+            Does matter? Do all transformers commute?
+          </Text>
         </Slide>
 
 { /*********************** Part III *********************************/ }
@@ -485,10 +516,11 @@ export default class Presentation extends React.Component {
             What next?
           </Heading>
           <List>
-            <ListItem>Write class definitions for transfomers</ListItem>
+            <ListItem>Write instances of transfomers</ListItem>
             <ListItem>Study Scotty on Hackage</ListItem>
             <ListItem>Check <Link href="devanla.com/read-you-a-scotty.html">Read You A Scotty</Link></ListItem>
             <ListItem>Look into Parsers</ListItem>
+            <ListItem>Is there an IO_T tranformer?</ListItem>
           </List>
         </Slide>
 
