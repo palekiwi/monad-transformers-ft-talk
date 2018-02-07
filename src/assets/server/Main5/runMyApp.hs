@@ -10,7 +10,7 @@ userInputLoop appState = do
 
   unless (request == "q") $ do
     let response = runMyApp notFound appState request
-    putStrLn response
+    response >>= putStrLn
     putStrLn "---"
     userInputLoop appState
 ----------------------------------------------------------------------

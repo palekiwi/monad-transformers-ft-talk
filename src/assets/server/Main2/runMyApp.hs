@@ -1,5 +1,5 @@
--- Running the App ---------------------------------------------------
-runMyApp :: (Request -> Response) -> AppState -> Request -> Response
+-- Running the App ------------------------------
+runMyApp :: Application -> AppState -> Application
 runMyApp defHandler appState =
   foldl (flip ($)) defHandler (routes appState)
 
@@ -9,9 +9,7 @@ userInputLoop appState = do
   request <- getLine
 
   unless (request == "q") $ do
-    let response = runMyApp defaultRoute appState request
-    case response of
-      Just x -> putStrLn x
-      Nothing -> putStrLn "Error"
+    let response = runMyApp notFound appState request
+    putStrLn response
     userInputLoop appState
-----------------------------------------------------------------------
+-------------------------------------------------

@@ -10,18 +10,12 @@ import {
   Heading,
   ListItem,
   List,
+  Link,
   Image,
   Quote,
   Slide,
   Text,
-  CodePane,
-  S,
-  Table,
-  TableHeader,
-  TableRow,
-  TableHeaderItem,
-  TableBody,
-  TableItem
+  CodePane
 } from 'spectacle';
 
 // Import theme
@@ -126,7 +120,7 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        { /* Part I */ }
+{ /************************* Part I *********************************/ }
         <Slide bgColor={cs.p1.bg} textColor={cs.p1.t}>
           <Heading size={3} textColor={cs.p1.t} caps>
             Part I
@@ -225,7 +219,7 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
 
-        { /* Part II */ }
+{ /************************ Part II *********************************/ }
         <Slide bgColor={cs.p2.bg}>
           <Heading size={3} textColor={cs.p2.t} caps>
             Part II
@@ -235,14 +229,9 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide bgColor={cs.p2.bg}>
-          <Heading size={3} textColor={cs.p2.t} caps>
-            Example: Login shell
-          </Heading>
-          <Heading size={1} textColor={cs.p2.h} caps fit>
-            The Discovery
-          </Heading>
-        </Slide>
+        <CodeSlide title="Example: Login Shell"
+          colors={cs.p2}
+          source={require('./assets/LoginShell_TriangleOfDoom.hs')}/>
 
         <Slide bgColor={cs.p2.bg}>
           <Heading size={3} textColor={cs.p2.t} fit caps>
@@ -256,7 +245,7 @@ export default class Presentation extends React.Component {
           <Haskell source={require('./assets/StateT.hs')} />
         </Slide>
 
-        { /* Part III */ }
+{ /*********************** Part III *********************************/ }
         <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
           <Heading size={3} textColor={cs.p3.t} caps>
             Part III
@@ -272,9 +261,35 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
 
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+          <Heading size={3} textColor={cs.p3.h} caps fit>
+            Why a server example?
+          </Heading>
+          <List>
+            <ListItem>a familiar context to try something new</ListItem>
+            <ListItem>good example of service layers and composition</ListItem>
+            <ListItem>great follow-up resources</ListItem>
+          </List>
+        </Slide>
+
+    { /************ 1st Iteration *****************/ }
+
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+          <Heading size={3} textColor={cs.p3.t} caps>
+            First Iteration
+          </Heading>
+          <Heading size={1} textColor={cs.p3.h} fit>
+            A functional server
+          </Heading>
+        </Slide>
+
         <CodeSlide title="1st Iteration: Types"
           colors={cs.p3}
           source={require('./assets/server/Main1/types.hs')}/>
+
+        <CodeSlide title="1st Iteration: Route Actions"
+          colors={cs.p3}
+          source={require('./assets/server/Main1/route-handlers.hs')}/>
 
         <CodeSlide title="1st Iteration: App State"
           colors={cs.p3}
@@ -284,7 +299,170 @@ export default class Presentation extends React.Component {
           colors={cs.p3}
           source={require('./assets/server/Main1/addroute.hs')}/>
 
-        <CodeSlide title="1st Iteration: Folding the Routes"
+        <CodeSlide title="1st Iteration: Running the app"
+          colors={cs.p3}
+          source={require('./assets/server/Main1/runMyApp.hs')}/>
+
+    { /************ 2nd Iteration *****************/ }
+
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+          <Heading size={3} textColor={cs.p3.t} caps>
+            Second Iteration
+          </Heading>
+          <Heading size={1} textColor={cs.p3.h} fit>
+            有拜有保庇 (If Things Go Wrong)
+          </Heading>
+        </Slide>
+
+        <CodeSlide title="2nd Iteration: Types"
+          colors={cs.p3}
+          source={require('./assets/server/Main2/types.hs')}/>
+
+        <CodeSlide title="2nd Iteration: Route Actions"
+          colors={cs.p3}
+          source={require('./assets/server/Main2/route-handlers.hs')}/>
+
+        <CodeSlide title="Meet MonadError"
+          colors={cs.p3}
+          source={require('./assets/MonadError.hs')}/>
+
+        <CodeSlide title="2nd Iteration: App State"
+          colors={cs.p3}
+          source={require('./assets/server/Main2/appstate.hs')}/>
+
+        <CodeSlide title="2nd Iteration: Adding Routes"
+          colors={cs.p3}
+          source={require('./assets/server/Main2/addroute.hs')}/>
+
+        <CodeSlide title="2nd Iteration: Running the App"
+          colors={cs.p3}
+          source={require('./assets/server/Main2/runMyApp.hs')}/>
+
+    { /************ 3rd Iteration *****************/ }
+
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+          <Heading size={3} textColor={cs.p3.t} caps>
+            Third Iteration
+          </Heading>
+          <Heading size={1} textColor={cs.p3.h} fit>
+            Reading The Environment
+          </Heading>
+        </Slide>
+
+        <CodeSlide title="3rd Iteration: Types"
+          colors={cs.p3}
+          source={require('./assets/server/Main3/types.hs')}/>
+
+        <CodeSlide title="3rd Iteration: Route Actions"
+          colors={cs.p3}
+          source={require('./assets/server/Main3/route-handlers.hs')}/>
+
+        <CodeSlide title="Meet MonadTrans"
+          colors={cs.p3}
+          source={require('./assets/MonadTrans.hs')}/>
+
+        <CodeSlide title="3rd Iteration: Adding Routes"
+          colors={cs.p3}
+          source={require('./assets/server/Main3/addroute.hs')}/>
+
+        <CodeSlide title="3rd Iteration: Running Actions"
+          colors={cs.p3}
+          source={require('./assets/server/Main3/runAction.hs')}/>
+
+    { /************ 4th Iteration *****************/ }
+
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+          <Heading size={3} textColor={cs.p3.t} caps>
+            Fourth Iteration
+          </Heading>
+          <Heading size={1} textColor={cs.p3.h} fit>
+            The State of Response
+          </Heading>
+        </Slide>
+
+        <CodeSlide title="4th Iteration: Types"
+          colors={cs.p3}
+          source={require('./assets/server/Main4/types.hs')}/>
+
+        <CodeSlide title="4th Iteration: Route Actions"
+          colors={cs.p3}
+          source={require('./assets/server/Main4/route-handlers.hs')}/>
+
+        <CodeSlide title="4th Iteration: Adding Routes"
+          colors={cs.p3}
+          source={require('./assets/server/Main4/addroute.hs')}/>
+
+        <CodeSlide title="4th Iteration: Running Actions"
+          colors={cs.p3}
+          source={require('./assets/server/Main4/runAction.hs')}/>
+
+    { /************ 5th Iteration *****************/ }
+
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+          <Heading size={3} textColor={cs.p3.t} caps>
+            Fifth Iteration
+          </Heading>
+          <Heading size={1} textColor={cs.p3.h} fit>
+            GET /launch-the-missiles
+          </Heading>
+        </Slide>
+
+        <CodeSlide title="5th Iteration: Types"
+          colors={cs.p3}
+          source={require('./assets/server/Main4/types.hs')}/>
+
+        <CodeSlide title="Meet MonadIO"
+          colors={cs.p3}
+          source={require('./assets/MonadIO.hs')}/>
+
+        <CodeSlide title="5th Iteration: Route Actions"
+          colors={cs.p3}
+          source={require('./assets/server/Main4/route-handlers.hs')}/>
+
+        <CodeSlide title="5th Iteration: Adding Routes"
+          colors={cs.p3}
+          source={require('./assets/server/Main4/addroute.hs')}/>
+
+        <CodeSlide title="5th Iteration: Running Actions"
+          colors={cs.p3}
+          source={require('./assets/server/Main4/runAction.hs')}/>
+
+        <CodeSlide title="5th Iteration: Running the app"
+          colors={cs.p3}
+          source={require('./assets/server/Main5/runMyApp.hs')}/>
+
+    { /************ 6th Iteration *****************/ }
+
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+          <Heading size={3} textColor={cs.p3.t} caps>
+            Sixth Iteration
+          </Heading>
+          <Heading size={1} textColor={cs.p3.h} fit>
+            愛拼才會贏? Newtype Deriving
+          </Heading>
+        </Slide>
+
+        <CodeSlide title="6th Iteration: Types"
+          colors={cs.p3}
+          source={require('./assets/server/Main1/types.hs')}/>
+
+        <CodeSlide title="6th Iteration: Route Actions"
+          colors={cs.p3}
+          source={require('./assets/server/Main1/route-handlers.hs')}/>
+
+        <CodeSlide title="6th Iteration: App State"
+          colors={cs.p3}
+          source={require('./assets/server/Main1/appstate.hs')}/>
+
+        <CodeSlide title="6th Iteration: Adding Routes"
+          colors={cs.p3}
+          source={require('./assets/server/Main1/addroute.hs')}/>
+
+        <CodeSlide title="6th Iteration: Running Actions"
+          colors={cs.p3}
+          source={require('./assets/server/Main1/addroute.hs')}/>
+
+        <CodeSlide title="6th Iteration: Running the app"
           colors={cs.p3}
           source={require('./assets/server/Main1/runMyApp.hs')}/>
 
@@ -300,6 +478,18 @@ export default class Presentation extends React.Component {
             <Quote textColor={cs.inOut.h}>Give me six hours to chop a tree and I will spend the first four sharpening the axe.</Quote>
             <Cite textColor={cs.inOut.t}>Abraham Lincoln</Cite>
           </BlockQuote>
+        </Slide>
+
+        <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
+          <Heading size={3} textColor={cs.inOut.h} caps fit>
+            What next?
+          </Heading>
+          <List>
+            <ListItem>Write class definitions for transfomers</ListItem>
+            <ListItem>Study Scotty on Hackage</ListItem>
+            <ListItem>Check <Link href="devanla.com/read-you-a-scotty.html">Read You A Scotty</Link></ListItem>
+            <ListItem>Look into Parsers</ListItem>
+          </List>
         </Slide>
 
       </Deck>

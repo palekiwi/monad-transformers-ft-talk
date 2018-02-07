@@ -6,7 +6,7 @@ myApp = do
 
 myServer :: AppStateT () -> IO ()
 myServer myApp = do
-  let appState = execState myApp AppState{routes=[]}
+  let appState = ST.execState myApp AppState{routes=[]}
   userInputLoop appState
 
 main :: IO ()

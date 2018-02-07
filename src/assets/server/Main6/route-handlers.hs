@@ -1,9 +1,9 @@
 -- Route Handlers ----------------------------------------------------
 routeAction1 :: ActionT ()
 routeAction1 = do
-  request <- lift ask
+  request <- ask
   liftIO $ putStrLn "We're doing IO"
-  lift . lift $ modify (const $ textResponse request "Hello from Route 1")
+  modify (const $ textResponse request "Hello from Route 1")
 
 routeAction2 :: ActionT ()
 routeAction2 = throwError "Error in Route 2"

@@ -4,7 +4,7 @@ type Response = String
 type Application = Request -> Response
 type Middleware = Application -> Application
 
-type ActionT = Either ActionError Response
+type ActionT = ExceptT ActionError (Reader Request) Response
 type ActionError = String
 
 newtype AppState = AppState { routes :: [Middleware] }
