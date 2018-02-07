@@ -148,10 +148,10 @@ export default class Presentation extends React.Component {
             The Power Of Monad:
           </Heading>
           <List>
-            <ListItem>is about keeping state pure</ListItem>
-            <ListItem>is about side effects</ListItem>
-            <ListItem>is like a burrito</ListItem>
-            <ListItem>makes composition possible</ListItem>
+            <ListItem>is about keeping state pure?</ListItem>
+            <ListItem>is about side effects?</ListItem>
+            <ListItem>is like a burrito?</ListItem>
+            <ListItem>makes composition possible?</ListItem>
           </List>
           <Text margin="10px 0 0" textColor={cs.inOut.t} size={5} bold>
           </Text>
