@@ -38,10 +38,10 @@ const theme = createTheme(
 );
 
 const cs = {
-  inOut: {bg: 'primary', h: 'secondary', t: 'tertiary', p: 'quartenary'},
+  inOut: {bg: 'primary', h: 'secondary', t: 'tertiary', p: 'tertiary'},
   p1: {bg: 'secondary', h: 'tertiary', t: 'primary', p: 'quartenary'},
-  p2: {bg: 'primary', h: 'secondary', t: 'tertiary', p: 'quartenary'},
-  p3 : {bg: 'secondary', h: 'tertiary', t: 'primary', p: 'secondary'},
+  p2: {bg: 'primary', h: 'secondary', t: 'tertiary', p: 'tertiary'},
+  p3 : {bg: 'secondary', h: 'tertiary', t: 'primary', p: 'primary'},
 };
 
 const Haskell = (props) =>
@@ -266,7 +266,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
 { /*********************** Part III *********************************/ }
-        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t} progressColor={cs.p3.p}>
           <Heading size={3} textColor={cs.p3.t} caps>
             Part III
           </Heading>
@@ -275,13 +275,13 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t} progressColor={cs.p3.p}>
           <BlockQuote>
             <Quote textColor={cs.p3.h}>The familiar becomes new, the new becomes familiar.</Quote>
           </BlockQuote>
         </Slide>
 
-        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t} progressColor={cs.p3.p}>
           <Heading size={3} textColor={cs.p3.h} caps fit>
             Why a server example?
           </Heading>
@@ -294,7 +294,7 @@ export default class Presentation extends React.Component {
 
     { /************ 1st Iteration *****************/ }
 
-        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t} progressColor={cs.p3.p}>
           <Heading size={3} textColor={cs.p3.t} caps>
             First Iteration
           </Heading>
@@ -303,14 +303,14 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t} progressColor={cs.p3.p}>
           <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
             1st Iteration: Types
           </Text>
           <Haskell source={require('./assets/server/Main1/types.hs')}/>
         </Slide>
 
-        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t} progressColor={cs.p3.p}>
           <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
             1st Iteration: Route Actions
           </Text>
@@ -340,7 +340,7 @@ export default class Presentation extends React.Component {
 
     { /************ 2nd Iteration *****************/ }
 
-        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
           <Heading size={3} textColor={cs.p3.t} caps>
             Second Iteration
           </Heading>
@@ -393,7 +393,7 @@ export default class Presentation extends React.Component {
 
     { /************ 3rd Iteration *****************/ }
 
-        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
           <Heading size={3} textColor={cs.p3.t} caps>
             Third Iteration
           </Heading>
@@ -439,7 +439,7 @@ export default class Presentation extends React.Component {
 
     { /************ 4th Iteration *****************/ }
 
-        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
           <Heading size={3} textColor={cs.p3.t} caps>
             Fourth Iteration
           </Heading>
@@ -478,7 +478,7 @@ export default class Presentation extends React.Component {
 
     { /************ 5th Iteration *****************/ }
 
-        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
           <Heading size={3} textColor={cs.p3.t} caps>
             Fifth Iteration
           </Heading>
@@ -531,7 +531,7 @@ export default class Presentation extends React.Component {
 
     { /************ 6th Iteration *****************/ }
 
-        <Slide bgColor={cs.p3.bg} textColor={cs.p3.t}>
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
           <Heading size={3} textColor={cs.p3.t} caps>
             Sixth Iteration
           </Heading>
