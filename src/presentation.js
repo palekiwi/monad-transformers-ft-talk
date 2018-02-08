@@ -582,6 +582,13 @@ export default class Presentation extends React.Component {
           <Haskell source={require('./assets/server/Main6/runMyApp.hs')}/>
         </Slide>
 
+        <Slide bgColor={cs.p3.bg} progressColor={cs.p3.p}>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            Sneak Peak into Scotty
+          </Text>
+          <Image src={require('./assets/img/scotty-trans.jpg')} />
+        </Slide>
+
 { /*********************** Outro *********************************/ }
         <Slide bgColor={cs.inOut.bg} progressColor={cs.inOut.p}>
           <Heading size={1} textColor={cs.inOut.h} caps fit>
