@@ -64,7 +64,7 @@ export default class Presentation extends React.Component {
       >
 
         { /* Intro */ }
-        <Slide bgColor={cs.inOut.bg}>
+        <Slide bgColor={cs.inOut.bg} progressColor={cs.inOut.p}>
           <Heading textColor={cs.inOut.h} size={5} bold>
             The Road To
           </Heading>
@@ -76,22 +76,22 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
 
-        <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
+        <Slide bgColor={cs.inOut.bg} progressColor={cs.inOut.p}>
           <Heading fit size={4} caps lineHeight={1} textColor={cs.inOut.h}>
             Why talk about Monad Transformers?
           </Heading>
         </Slide>
 
-        <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
+        <Slide bgColor={cs.inOut.bg} progressColor={cs.inOut.p}>
           <Heading margin="10px 0 0" textColor={cs.inOut.t} size={5} bold>
-            But why bother?
+            But why listen?
           </Heading>
           <Image src={require("./assets/img/luke-obiwan-peering-into-lightsaber.jpg")} />
         </Slide>
 
-        <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
+        <Slide bgColor={cs.inOut.bg} progressColor={cs.inOut.p}>
           <Heading size={4} textAlign="left" lineHeight={1} textColor={cs.inOut.t}>
-            do
+            Do what?
           </Heading>
           <Heading size={4} textAlign="left" caps lineHeight={1} textColor={cs.inOut.h}>
             Part I: The Base >>=
@@ -104,6 +104,13 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
+        <Slide bgColor={cs.inOut.bg} progressColor={cs.inOut.p}>
+          <BlockQuote>
+            <Quote textColor={cs.inOut.h}>The true voyage of discovery is not in seeking new landscapes but in having new eyes.</Quote>
+            <Cite textColor={cs.inOut.t}>Marcel Proust</Cite>
+          </BlockQuote>
+        </Slide>
+
 { /************************* Part I *********************************/ }
         <Slide bgColor={cs.p1.bg} textColor={cs.p1.t}>
           <Heading size={3} textColor={cs.p1.t} caps>
@@ -112,13 +119,6 @@ export default class Presentation extends React.Component {
           <Heading size={1} textColor={cs.p1.h} caps fit>
             The Base 'Monad'
           </Heading>
-        </Slide>
-
-        <Slide bgColor={cs.p1.bg} textColor={cs.p1.t}>
-          <BlockQuote>
-            <Quote textColor={cs.p1.h}>The true voyage of discovery is not in seeking new landscapes but in having new eyes.</Quote>
-            <Cite textColor={cs.p1.t}>Marcel Proust</Cite>
-          </BlockQuote>
         </Slide>
 
         <Slide bgColor={cs.p1.bg} textColor={cs.p1.t}>
@@ -204,7 +204,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
 { /************************ Part II *********************************/ }
-        <Slide bgColor={cs.p2.bg}>
+        <Slide bgColor={cs.p2.bg} progressColor={cs.p2.p}>
           <Heading size={3} textColor={cs.p2.t} caps>
             Part II
           </Heading>
@@ -227,26 +227,24 @@ export default class Presentation extends React.Component {
           <Haskell source={require('./assets/impossible-join.hs')}/>
         </Slide>
 
-        <Slide bgColor={cs.p2.bg}>
+        <Slide bgColor={cs.p2.bg} progressColor={cs.p2.p}>
           <Heading size={3} textColor={cs.p2.t} fit caps>
             Anatomy of A Transformer
           </Heading>
-
-          <Haskell source={require('./assets/MaybeT_MonadInstance.hs')} />
-
           <Text margin="10px 0 0" textColor={cs.p2.h} size={5}>
             A transformer is a way to add the capability of the PRECURSOR monad to the BASE monad.
           </Text>
+          <Haskell source={require('./assets/MaybeT_MonadInstance.hs')} />
         </Slide>
 
         <Slide bgColor={cs.p2.bg} progressColor={cs.p2.p}>
           <Text margin="10px 0 0" textColor={cs.p2.t} size={1} bold>
-            Example: Login Shell With A Tranformer
+            Example: Login Shell With A Transformer
           </Text>
           <Haskell source={require('./assets/LoginShell_Transformer.hs')}/>
         </Slide>
 
-        <Slide bgColor={cs.p2.bg}>
+        <Slide bgColor={cs.p2.bg} progressColor={cs.p2.p}>
           <Heading size={3} textColor={cs.p2.t} fit caps>
             Example Monad Transformers
           </Heading>
@@ -258,12 +256,12 @@ export default class Presentation extends React.Component {
           <Haskell source={require('./assets/StateT.hs')} />
         </Slide>
 
-        <Slide bgColor={cs.p2.bg} textColor={cs.p2.t}>
+        <Slide bgColor={cs.p2.bg} progressColor={cs.p2.p}>
           <Heading fit size={3} textColor={cs.p2.t} caps>
             Question:
           </Heading>
           <Text margin="10px 0 0" textColor={cs.p2.t} size={5}>
-            Does matter? Do all transformers commute?
+            Does ordering matter? Do transformers commute?
           </Text>
         </Slide>
 
@@ -585,20 +583,20 @@ export default class Presentation extends React.Component {
         </Slide>
 
 { /*********************** Outro *********************************/ }
-        <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
+        <Slide bgColor={cs.inOut.bg} progressColor={cs.inOut.p}>
           <Heading size={1} textColor={cs.inOut.h} caps fit>
             Outro
           </Heading>
         </Slide>
 
-        <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
+        <Slide bgColor={cs.inOut.bg} progressColor={cs.inOut.p}>
           <BlockQuote>
             <Quote textColor={cs.inOut.h}>Give me six hours to chop a tree and I will spend the first four sharpening the axe.</Quote>
             <Cite textColor={cs.inOut.t}>Abraham Lincoln</Cite>
           </BlockQuote>
         </Slide>
 
-        <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
+        <Slide bgColor={cs.inOut.bg} progressColor={cs.inOut.p}>
           <Heading size={3} textColor={cs.inOut.h} caps fit>
             What next?
           </Heading>
@@ -607,7 +605,7 @@ export default class Presentation extends React.Component {
             <ListItem>Study Scotty on Hackage</ListItem>
             <ListItem>Check <Link href="devanla.com/read-you-a-scotty.html">Read You A Scotty</Link></ListItem>
             <ListItem>Look into Parsers</ListItem>
-            <ListItem>Is there an IO_T tranformer?</ListItem>
+            <ListItem>Is there an IO_T transformer?</ListItem>
           </List>
         </Slide>
 
