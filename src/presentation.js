@@ -91,7 +91,7 @@ export default class Presentation extends React.Component {
 
         <Slide bgColor={cs.inOut.bg} textColor={cs.inOut.t}>
           <Heading size={4} textAlign="left" lineHeight={1} textColor={cs.inOut.t}>
-            do
+            Do what?
           </Heading>
           <Heading size={4} textAlign="left" caps lineHeight={1} textColor={cs.inOut.h}>
             Part I: The Base >>=
@@ -241,7 +241,7 @@ export default class Presentation extends React.Component {
 
         <Slide bgColor={cs.p2.bg} progressColor={cs.p2.p}>
           <Text margin="10px 0 0" textColor={cs.p2.t} size={1} bold>
-            Example: Login Shell With A Tranformer
+            Example: Login Shell With A Transformer
           </Text>
           <Haskell source={require('./assets/LoginShell_Transformer.hs')}/>
         </Slide>
@@ -263,7 +263,7 @@ export default class Presentation extends React.Component {
             Question:
           </Heading>
           <Text margin="10px 0 0" textColor={cs.p2.t} size={5}>
-            Does matter? Do all transformers commute?
+            Does order matter? Do transformers commute?
           </Text>
         </Slide>
 
@@ -607,7 +607,7 @@ export default class Presentation extends React.Component {
             <ListItem>Study Scotty on Hackage</ListItem>
             <ListItem>Check <Link href="devanla.com/read-you-a-scotty.html">Read You A Scotty</Link></ListItem>
             <ListItem>Look into Parsers</ListItem>
-            <ListItem>Is there an IO_T tranformer?</ListItem>
+            <ListItem>Is there an IO_T transformer?</ListItem>
           </List>
         </Slide>
 
