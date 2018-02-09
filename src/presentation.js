@@ -610,7 +610,7 @@ export default class Presentation extends React.Component {
           <List>
             <ListItem>Write instances of transfomers</ListItem>
             <ListItem>Study Scotty on Hackage</ListItem>
-            <ListItem>Check <Link href="devanla.com/read-you-a-scotty.html">Read You A Scotty</Link></ListItem>
+            <ListItem>Check <Link href="http://devanla.com/read-you-a-scotty.html">Read You A Scotty</Link></ListItem>
             <ListItem>Look into Parsers</ListItem>
             <ListItem>Is there an IO_T transformer?</ListItem>
           </List>
