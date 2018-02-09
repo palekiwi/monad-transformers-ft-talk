@@ -72,7 +72,7 @@ export default class Presentation extends React.Component {
             Monad Transformers
           </Heading>
           <Text margin="10px 0 0" textColor={cs.inOut.t} size={5}>
-            by 黎勇禪 Pawel Lisewski
+            by 黎勇禪 Pawel Lisewski pawel.lisewski@gmail.com
           </Text>
         </Slide>
 
@@ -617,6 +617,9 @@ export default class Presentation extends React.Component {
             <ListItem>Look into Parsers</ListItem>
             <ListItem>Is there an IO_T transformer?</ListItem>
           </List>
+          <Text margin="10px 0 0" textColor={cs.inOut.t} size={5}>
+            You can contact me at pawel.lisewski@gmail.com
+          </Text>
         </Slide>
 
       </Deck>
