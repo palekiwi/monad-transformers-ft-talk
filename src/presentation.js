@@ -283,13 +283,16 @@ export default class Presentation extends React.Component {
 
         <Slide bgColor={cs.p3.bg} textColor={cs.p3.t} progressColor={cs.p3.p}>
           <Heading size={3} textColor={cs.p3.h} caps fit>
-            Why a server example?
+            Why a server-side framework example?
           </Heading>
           <List>
             <ListItem>a familiar context to try something new</ListItem>
             <ListItem>good example of service layers and composition</ListItem>
             <ListItem>great follow-up resources</ListItem>
           </List>
+          <Text margin="10px 0 0" textColor={cs.p3.t} size={1} bold>
+            <Link href="https://github.com/dhammafarer/simple-server">Code repo for this part on Github</Link>
+          </Text>
         </Slide>
 
     { /************ 1st Iteration *****************/ }
@@ -299,7 +302,7 @@ export default class Presentation extends React.Component {
             First Iteration
           </Heading>
           <Heading size={1} textColor={cs.p3.h} fit>
-            A functional server
+            An Introduction to the app
           </Heading>
         </Slide>
 
